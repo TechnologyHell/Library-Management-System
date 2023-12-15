@@ -1,41 +1,40 @@
-
 import java.util.Scanner;
 
 public class LibraryMain {
     public static void main(String[] args) {
-        // password setting
 
         Scanner scanner = new Scanner(System.in);
         String sid = "Admin";
         String spd = "password";
 
-        System.out.println("Enter the user name:-");
+        System.out.print("\nEnter the UserName : ");
         String inid = scanner.nextLine();
 
         if (inid.equals(sid)) {
-            System.out.println("Enter the password:-");
+            System.out.print("Enter the Password : ");
             String inpd = scanner.nextLine();
 
             if (spd.equals(inpd)) {
-                System.out.println("Access Granted");
+                System.out.println();
+                System.out.println("||  Access Granted!  ||\n\nWelcome to Admin Panel");
 
                 {
                     Library library = new Library();
 
                     while (true) {
                         System.out.println("\nLibrary Management System");
-                        System.out.println("1. Show list of books");
-                        System.out.println("2. Show list of users");
-                        System.out.println("3. Search for a book");
-                        System.out.println("4. Add a book");
-                        System.out.println("5. Delete a book");
-                        System.out.println("6. Update a book");
-                        System.out.println("7. Borrow a book");
-                        System.out.println("8. Return a book");
-                        System.out.println("9. List the Authors");
-                        System.out.println("0. Exit");
+                        System.out.println("1. Show List of Books");
+                        System.out.println("2. Show List of Users");
+                        System.out.println("3. Search for a Book");
+                        System.out.println("4. Add a Book");
+                        System.out.println("5. Delete a Book");
+                        System.out.println("6. Update a Book");
+                        System.out.println("7. Borrow a Book");
+                        System.out.println("8. Return a Book");
+                        System.out.println("9. Show list of Authors");
+                        System.out.println("0. Sign Out");
 
-                        System.out.print("Enter your choice: ");
+                        System.out.print("\nEnter your choice: ");
                         int choice = scanner.nextInt();
                         scanner.nextLine();
 
@@ -125,28 +124,22 @@ public class LibraryMain {
                                 break;
 
                             case 0:
-                                System.out.println("Exiting the Library Management System. Goodbye!");
-                                scanner.close();
+                                System.out.println("\nSigning out from the Admin Panel...\n");
                                 System.exit(0);
                             default:
                                 System.out.println("Invalid choice. Please enter a valid option.");
-
                         }
-
                     }
-
                 }
 
             } else {
-                System.out.println("Incorrect password");
-                System.out.println("Access Denied!");
-
+                System.out.println("Incorrect Password Entered.");
+                System.out.println("\n||  Access Denied!  ||\n");
             }
 
         } else {
-            System.out.println("Incorrect Username");
+            System.out.println("Incorrect Username Entered");
         }
-
         scanner.close();
 
     }
